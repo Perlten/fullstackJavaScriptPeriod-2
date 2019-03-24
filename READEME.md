@@ -1,23 +1,23 @@
-### Why would you consider a Scripting Language as JavaScript as your Backend Platform?
+# Why would you consider a Scripting Language as JavaScript as your Backend Platform?
 
 It can be a benefit to use the same langue on both frontend and backend, both in term experince and cost. 
 
 
-### Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
+# Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
 
 It is much more ligt weight to use express which is a server in iteself, then to use a tomcat server which can be a huge overkill for what is needed. You may also want to take into consideration that javascript is a single threaded langue, which can be a pro or a con depending on problem you want to solve.
 
-### Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
+# Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
 
 You deploy more instances of the backend, also called horizontal scaling. Horizontal scaling is about duplicating your application instance to manage a larger number of incoming connections. This action can be performed on a single multi-core machine or across different machines.
 
-### Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems
+# Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems
 
 You download node on a server and your code base aswell(you could use git). then you could simply run the the program in the background. The issue with this is if the server goes down and need to restart, or the application gets a error. Then it wont start the app anew. There are alot of ways to solve this problem. One om them is to use a node module called pm2
 
 if you need more then one app running on the same server you can use a reverse proxy like nginx
 
-### Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
+# Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
 
 We only want debug messages to display in production
 
@@ -44,7 +44,7 @@ app.use(logError)
 ``` 
 
 
-### Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages 
+# Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages 
 
 ```javascript 
 require('mocha')
@@ -143,7 +143,7 @@ describe("Test user rest endpoints", function () {
 })
 ```
 
-### Explain, using relevant examples, the Express concept; middleware.
+# Explain, using relevant examples, the Express concept; middleware.
 
 Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
 
@@ -155,7 +155,7 @@ End the request-response cycle.
 Call the next middleware function in the stack.
 If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
 
-### Compare the express strategy toward (server side) templating with the one you used with Java on second semester.
+# Compare the express strategy toward (server side) templating with the one you used with Java on second semester.
 
 SPA is fast, as most resources (HTML+CSS+Scripts) are only loaded once throughout the lifespan of application. Only data is transmitted back and forth.
 
@@ -163,7 +163,7 @@ It’s easier to make a mobile application because the developer can reuse the s
 
 SPA can cache any local storage effectively. An application sends only one request, store all data, then it can use this data and works even offline.
 
-### Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
+# Demonstrate a simple Server Side Rendering example using a technology of your own choice (pug, EJS, ..).
 
 ```html
 <!DOCTYPE html>
@@ -193,12 +193,12 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
-### Explain, using relevant examples, your strategy for implementing a REST-API with Node/Express and show how you can "test" all the four CRUD operations programmatically using, for example, the Request package.
+# Explain, using relevant examples, your strategy for implementing a REST-API with Node/Express and show how you can "test" all the four CRUD operations programmatically using, for example, the Request package.
 
 Look at mini project
 
 
-### Explain, using relevant examples, about testing JavaScript code, relevant packages (Mocha etc.) and how to test asynchronous code. 
+# Explain, using relevant examples, about testing JavaScript code, relevant packages (Mocha etc.) and how to test asynchronous code. 
 
 ```javascript 
 require('mocha')
@@ -276,7 +276,7 @@ describe("userFacade", function () {
 ```
 
 
-### Explain, using relevant examples, different ways to mock out databases, HTTP-request etc.
+# Explain, using relevant examples, different ways to mock out databases, HTTP-request etc.
 
 ```typescript
 
@@ -339,24 +339,24 @@ describe("Test swapi", function () {
 
 ```
 
-### Explain, preferably using an example, how you have deployed your node/Express applications, and which of the Express Production best practices you have followed.
+# Explain, preferably using an example, how you have deployed your node/Express applications, and which of the Express Production best practices you have followed.
 
 I have deployed with pm2, and used git to send code base to my server
 
 
-### Explain, generally, what is meant by a NoSQL database. 
+# Explain, generally, what is meant by a NoSQL database. 
 
 its a very wide term as it covers every database that is not relational.
 
-### Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
+# Explain Pros & Cons in using a NoSQL database like MongoDB as your data store, compared to a traditional Relational SQL Database like MySQL.
 
 It is very fast to read data as you often avoid have to join tables. But it can also be slower to update because of the database is denormalized.
 
-### Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB
+# Explain reasons to add a layer like Mongoose, on top on of a schema-less database like MongoDB
 
 Becuase we often want a wat of controlling the content and format of the database
 
-### Demonstrate, using a REST-API you have designed, how to perform all CRUD operations on a MongoDB
+# Demonstrate, using a REST-API you have designed, how to perform all CRUD operations on a MongoDB
 
 
 ```javascript 
@@ -396,11 +396,11 @@ module.exports = {
 ```
 
 
-### Explain the benefits of using Mongoose, and demonstrate, using your own code, an example involving all CRUD operations
+# Explain the benefits of using Mongoose, and demonstrate, using your own code, an example involving all CRUD operations
 
 Look at the two questions above
 
-### Explain the “6 Rules of Thumb: Your Guide Through the Rainbow” as to how and when you would use normalization vs. denormalization.
+# Explain the “6 Rules of Thumb: Your Guide Through the Rainbow” as to how and when you would use normalization vs. denormalization.
 
 ## one-to-few
 
@@ -418,7 +418,7 @@ db.person.findOne()
 This design has all of the advantages and disadvantages of embedding. The main advantage is that you don’t have to perform a separate query to get the embedded details; the main disadvantage is that you have no way of accessing the embedded details as stand-alone entities.
 
 
-### One-to-Many
+# One-to-Many
 
 ```javascript
 db.products.findOne()
@@ -435,7 +435,7 @@ db.products.findOne()
 ```
 Each Product would have its own document, which would contain an array of ObjectID references to the Parts that make up that Product:
 
-### one-to-squillions
+# one-to-squillions
 
 ```javascript
 db.logmsg.findOne()
@@ -450,20 +450,20 @@ db.logmsg.findOne()
 You can also denormalize the “one-to-squillions” example. This works in one of two ways: you can either put information about the “one” side (from the 'hosts’ document) into the “squillions” side (the log entries), or you can put summary information from the “squillions” side into the “one” side.
 
 
-# One:
+## One:
  favor embedding unless there is a compelling reason not to
-# Two:
+## Two:
  needing to access an object on its own is a compelling reason not to embed it
-# Three:
+## Three:
  Arrays should not grow without bound. If there are more than a couple of hundred documents on the “many” side, don’t embed them; if there are more than a few thousand documents on the “many” side, don’t use an array of ObjectID references. High-cardinality arrays are a compelling reason not to embed.
-# Four:
+## Four:
  Don’t be afraid of application-level joins: if you index correctly and use the projection specifier (as shown in part 2) then application-level joins are barely more expensive than server-side joins in a relational database.
-# Five:
+## Five:
  Consider the write/read ratio when denormalizing. A field that will mostly be read and only seldom updated is a good candidate for denormalization: if you denormalize a field that is updated frequently then the extra work of finding and updating all the instances is likely to overwhelm the savings that you get from denormalizing.
-# Six: 
+## Six: 
 As always with MongoDB, how you model your data depends – entirely – on your particular application’s data access patterns. You want to structure your data to match the ways that your application queries and updates it.
 
-### Demonstrate, using your own code-samples, decisions you have made regarding → normalization vs denormalization 
+# Demonstrate, using your own code-samples, decisions you have made regarding → normalization vs denormalization 
 
 ```javascript 
 const mongoose = require("mongoose");
@@ -503,7 +503,7 @@ let UserSchema = new Schema({
 a user have a one-to-few job. therefore we have embedded the job data into user
 
 
-### Explain, using a relevant example, a full JavaScript backend including relevant test cases to test the REST-API (not on the production database)
+# Explain, using a relevant example, a full JavaScript backend including relevant test cases to test the REST-API (not on the production database)
 
 Look in miniproject
 
